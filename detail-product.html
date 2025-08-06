@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NaturalGlow - Crème Hydratante Naturelle</title>
+  <meta name="description" content="Crème visage bio à l'aloe vera et huile d'argan - Hydratation intense 24h - Sans parabènes - 50ml">
+  <!-- Balises SEO -->
+  <meta property="og:title" content="NaturalGlow - Crème Hydratante Naturelle">
+  <meta property="og:description" content="Crème visage bio à l'aloe vera et huile d'argan - Hydratation intense 24h">
+  <meta property="og:image" content="https://www.naturalglow.com/images/cream-large.jpg">
+  <meta property="og:url" content="https://www.naturalglow.com/creme-hydratante.html">
+  <link rel="canonical" href="https://www.naturalglow.com/creme-hydratante.html">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <style>
+    :root {
+      --couleur-primaire: #5C3A21;
+      --couleur-secondaire: #7a4c2e;
+      --fond-clair: #F8F5F1;
+      --fond-blanc: #FFFDFB;
+      --fond-doux: #f2eae4;
+    }
+    
+    body {
+      background-color: var(--fond-clair);
+      font-family: 'Segoe UI', sans-serif;
+      padding-top: 80px; /* Pour la navbar fixe */
+    }
+    
+    .navbar {
+      background-color: var(--fond-blanc) !important;
+      box-shadow: 0 2px 10px rgba(92, 58, 33, 0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    
+    .navbar-brand {
+      font-weight: bold;
+      color: var(--couleur-primaire) !important;
+    }
+    
+    .nav-link {
+      color: var(--couleur-primaire) !important;
+      margin-right: 15px;
+      position: relative;
+    }
+    
+    .nav-link:hover {
+      color: var(--couleur-secondaire) !important;
+    }
+    
+    .navbar-nav .nav-link.active {
+      font-weight: 600;
+    }
+    
+    .navbar-nav .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--couleur-primaire);
+    }
+    
+    .btn-custom {
+      background-color: var(--couleur-primaire);
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-custom:hover {
+      background-color: var(--couleur-secondaire);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(92, 58, 33, 0.2);
+    }
+    
+    .btn-outline-custom {
+      border: 1px solid var(--couleur-primaire);
+      color: var(--couleur-primaire);
+      background-color: transparent;
+    }
+    
+    .btn-outline-custom:hover {
+      background-color: var(--couleur-primaire);
+      color: white;
+    }
+    
+    .text-brown {
+      color: var(--couleur-primaire);
+    }
+    
+    .bg-soft {
+      background-color: var(--fond-doux);
+    }
+    
+    /* Gallery produit */
+    .product-gallery {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .thumbnail-container {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    
+    .thumbnail {
+      width: 70px;
+      height: 70px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .thumbnail:hover {
+      border-color: var(--couleur-primaire);
+    }
+    
+    .thumbnail.active {
+      border-color: var(--couleur-primaire);
+      border-width: 2px;
+    }
+    
+    .main-image {
+      width: 100%;
+      height: 400px;
+      object-fit: contain;
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+    }
+    
+    /* Section caractéristiques */
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      background-color: var(--fond-doux);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    
+    /* Avis clients */
+    .rating {
+      color: #FFC107;
+      font-size: 1.2rem;
+    }
+    
+    .review-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    /* Adaptations mobile */
+    @media (max-width: 768px) {
+      .main-image {
+        height: 300px;
+      }
+      
+      .product-info {
+        margin-top: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">NaturalGlow</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link active" href="produits.html">Produits</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Catégories</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          <li class="nav-item ms-3">
+            <a href="#" class="nav-link position-relative">
+              <i class="bi bi-cart3" style="font-size: 1.2rem;"></i>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PRODUIT SECTION -->
+  <section class="py-5">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+          <li class="breadcrumb-item"><a href="produits.html">Produits</a></li>
+          <li class="breadcrumb-item"><a href="soins-visage.html">Soins Visage</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Crème Hydratante</li>
+        </ol>
+      </nav>
+      
+      <div class="row">
+        <!-- Gallery Produit -->
+        <div class="col-lg-6">
+          <div class="product-gallery">
+            <img id="mainImage" src="images/cream-large.jpg" alt="Crème hydratante NaturalGlow - Vue avant" class="main-image shadow-sm mb-3">
+            <div class="thumbnail-container">
+              <img src="images/cream-1.jpg" alt="Crème hydratante - Vue de face" class="thumbnail active" onclick="changeImage(this, 'images/cream-large.jpg')">
+              <img src="images/cream-2.jpg" alt="Crème hydratante - Vue de profil" class="thumbnail" onclick="changeImage(this, 'images/cream-2.jpg')">
+              <img src="images/cream-3.jpg" alt="Crème hydratante - Texture" class="thumbnail" onclick="changeImage(this, 'images/cream-3.jpg')">
+              <img src="images/cream-packaging.jpg" alt="Crème hydratante - Packaging" class="thumbnail" onclick="changeImage(this, 'images/cream-packaging.jpg')">
+            </div>
+          </div>
+        </div>
+        
+        <!-- Info Produit -->
+        <div class="col-lg-6 product-info">
+          <h1 class="text-brown fw-bold">Crème Hydratante Naturelle</h1>
+          <p class="text-muted">Référence: NG-CREAM-50</p>
+          
+          <div class="d-flex align-items-center my-3">
+            <div class="rating">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-half"></i>
+            </div>
+            <a href="#avis" class="ms-3 small">128 avis</a>
+          </div>
+          
+          <p class="lead">Une crème visage bio à l'aloe vera et huile d'argan pour une hydratation intense 24h.</p>
+          
+          <div class="bg-soft p-4 rounded-3 my-4">
+            <h4 class="text-brown">24,99€</h4>
+            <p class="text-success mb-0">En stock - Livraison en 24h</p>
+          </div>
+          
+          <div class="mb-4">
+            <h5 class="text-brown">Volume :</h5>
+            <div class="btn-group" role="group">
+              <input type="radio" class="btn-check" name="volume" id="50ml" autocomplete="off" checked>
+              <label class="btn btn-outline-custom" for="50ml">50ml</label>
+              
+              <input type="radio" class="btn-check" name="volume" id="100ml" autocomplete="off">
+              <label class="btn btn-outline-custom" for="100ml">100ml</label>
+            </div>
+          </div>
+          
+          <div class="mb-4">
+            <label for="quantity" class="form-label text-brown">Quantité :</label>
+            <div class="input-group" style="max-width: 120px;">
+              <button class="btn btn-outline-secondary" type="button" onclick="decreaseQuantity()">-</button>
+              <input type="number" class="form-control text-center" id="quantity" value="1" min="1">
+              <button class="btn btn-outline-secondary" type="button" onclick="increaseQuantity()">+</button>
+            </div>
+          </div>
+          
+          <div class="d-flex flex-wrap gap-3 mb-4">
+            <button class="btn btn-custom flex-grow-1">
+              <i class="bi bi-cart-plus me-2"></i>Ajouter au panier
+            </button>
+            <button class="btn btn-outline-custom">
+              <i class="bi bi-heart"></i>
+            </button>
+          </div>
+          
+          <div class="d-flex align-items-center text-muted small">
+            <i class="bi bi-shield-check me-2"></i>
+            <span>Paiement sécurisé - Livraison offerte dès 50€</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESCRIPTION SECTION -->
+  <section class="py-5 bg-soft">
+    <div class="container">
+      <ul class="nav nav-tabs" id="productTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab">Description</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="ingredients-tab" data-bs-toggle="tab" data-bs-target="#ingredients" type="button" role="tab">Ingrédients</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="usage-tab" data-bs-toggle="tab" data-bs-target="#usage" type="button" role="tab">Mode d'emploi</button>
+        </li>
+      </ul>
+      
+      <div class="tab-content p-4 bg-white rounded-bottom shadow-sm" id="productTabsContent">
+        <div class="tab-pane fade show active" id="description" role="tabpanel">
+          <h3 class="text-brown mb-4">Une hydratation naturelle et intense</h3>
+          <p>Notre crème hydratante naturelle est formulée pour nourrir et protéger votre peau tout au long de la journée. Enrichie en aloe vera bio et en huile d'argan, elle apporte une hydratation profonde sans effet gras.</p>
+          
+          <div class="row mt-4">
+            <div class="col-md-6">
+              <h4 class="text-brown h5"><i class="bi bi-check-circle-fill text-success me-2"></i>Bénéfices</h4>
+              <ul>
+                <li>Hydratation 24 heures</li>
+                <li>Apaisant pour les peaux sensibles</li>
+                <li>Texture légère et non grasse</li>
+                <li>Réduit les sensations de tiraillement</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <h4 class="text-brown h5"><i class="bi bi-check-circle-fill text-success me-2"></i>Caractéristiques</h4>
+              <ul>
+                <li>Convient à tous types de peau</li>
+                <li>Testé sous contrôle dermatologique</li>
+                <li>Sans parfum artificiel</li>
+                <li>Fabriqué en France</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tab-pane fade" id="ingredients" role="tabpanel">
+          <h3 class="text-brown mb-4">Composition naturelle</h3>
+          <p>Ingrédients principaux : Aqua (eau), Aloe barbadensis leaf juice*, Argania spinosa kernel oil*, Glycerin, Cetearyl alcohol, Glyceryl stearate, Cetearyl glucoside.</p>
+          <p class="small text-muted">*Ingrédients issus de l'agriculture biologique</p>
+          
+          <div class="alert alert-light mt-4">
+            <h4 class="text-brown h5">Sans :</h4>
+            <div class="d-flex flex-wrap gap-3">
+              <span class="badge bg-light text-dark"><i class="bi bi-x-circle me-1"></i> Parabènes</span>
+              <span class="badge bg-light text-dark"><i class="bi bi-x-circle me-1"></i> Silicones</span>
+              <span class="badge bg-light text-dark"><i class="bi bi-x-circle me-1"></i> PEG</span>
+              <span class="badge bg-light text-dark"><i class="bi bi-x-circle me-1"></i> Parfums synthétiques</span>
+              <span class="badge bg-light text-dark"><i class="bi bi-x-circle me-1"></i> Colorants</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tab-pane fade" id="usage" role="tabpanel">
+          <h3 class="text-brown mb-4">Comment utiliser ce produit</h3>
+          <ol>
+            <li>Nettoyer votre visage avec un produit adapté</li>
+            <li>Prélever une noisette de crème</li>
+            <li>Appliquer en massant délicatement sur le visage et le cou</li>
+            <li>Utiliser matin et soir pour une hydratation optimale</li>
+          </ol>
+          <p class="mt-3">Conserver à température ambiante, à l'abri de la lumière directe.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARACTÉRISTIQUES SECTION -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center text-brown mb-5">Pourquoi choisir ce produit ?</h2>
+      
+      <div class="row g-4">
+        <div class="col-md-3 text-center">
+          <div class="feature-icon mx-auto">
+            <i class="bi bi-leaf text-brown"></i>
+          </div>
+          <h4 class="h5 text-brown">100% Naturel</h4>
+          <p class="small">Formulé avec des ingrédients d'origine naturelle</p>
+        </div>
+        
+        <div class="col-md-3 text-center">
+          <div class="feature-icon mx-auto">
+            <i class="bi bi-check-circle text-brown"></i>
+          </div>
+          <h4 class="h5 text-brown">Bio</h4>
+          <p class="small">Ingrédients issus de l'agriculture biologique</p>
+        </div>
+        
+        <div class="col-md-3 text-center">
+          <div class="feature-icon mx-auto">
+            <i class="bi bi-brightness-high text-brown"></i>
+          </div>
+          <h4 class="h5 text-brown">Non testé</h4>
+          <p class="small">Jamais testé sur les animaux</p>
+        </div>
+        
+        <div class="col-md-3 text-center">
+          <div class="feature-icon mx-auto">
+            <i class="bi bi-recycle text-brown"></i>
+          </div>
+          <h4 class="h5 text-brown">Eco-responsable</h4>
+          <p class="small">Emballage recyclable et rechargeable</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVIS CLIENTS SECTION -->
+  <section id="avis" class="py-5 bg-soft">
+    <div class="container">
+      <h2 class="text-center text-brown mb-5">Avis clients</h2>
+      
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <h3 class="h4 text-brown">Note moyenne : 4.7/5</h3>
+          <div class="d-flex align-items-center my-2">
+            <div class="rating">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-half"></i>
+            </div>
+            <span class="ms-2">128 avis</span>
+          </div>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#reviewModal">
+            <i class="bi bi-pencil-fill me-2"></i>Donner votre avis
+          </button>
+        </div>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Avis 1 -->
+        <div class="col-md-6">
+          <div class="review-card h-100">
+            <div class="d-flex justify-content-between mb-3">
+              <div class="d-flex align-items-center">
+                <img src="images/avatar1.jpg" alt="Sophie M." class="rounded-circle me-2" width="40" height="40">
+                <span class="fw-medium">Sophie M.</span>
+              </div>
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+            <h5 class="text-brown">Parfaite pour ma peau sensible</h5>
+            <p class="small text-muted">Acheté le 12/05/2023</p>
+            <p>Je l'utilise depuis un mois et ma peau n'a jamais été aussi douce. La texture est légère et pénètre rapidement sans laisser de film gras.</p>
+          </div>
+        </div>
+        
+        <!-- Avis 2 -->
+        <div class="col-md-6">
+          <div class="review-card h-100">
+            <div class="d-flex justify-content-between mb-3">
+              <div class="d-flex align-items-center">
+                <img src="images/avatar2.jpg" alt="Thomas L." class="rounded-circle me-2" width="40" height="40">
+                <span class="fw-medium">Thomas L.</span>
+              </div>
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star"></i>
+              </div>
+            </div>
+            <h5 class="text-brown">Très bonne crème</h5>
+            <p class="small text-muted">Acheté le 28/04/2023</p>
+            <p>Texture agréable et odeur naturelle très discrète. Je regrette juste que le pot soit un peu petit pour le prix.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-4">
+        <a href="#" class="btn btn-outline-custom">Voir tous les avis</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUITS ASSOCIES SECTION -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center text-brown mb-5">Vous aimerez aussi</h2>
+      
+      <div class="row g-4">
+        <!-- Produit 1 -->
+        <div class="col-md-4">
+          <div class="card border-0 h-100">
+            <div class="position-relative">
+              <img src="images/serum.jpg" class="card-img-top" alt="Sérum hydratant" style="height: 200px; object-fit: contain;">
+              <span class="position-absolute top-0 end-0 bg-success text-white small p-1 m-2 rounded">Nouveau</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title text-brown">Sérum Hydratant Intense</h5>
+              <div class="rating small">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star"></i>
+                <span class="text-muted ms-1">(42)</span>
+              </div>
+              <p class="card-text mt-2">29,99€</p>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <button class="btn btn-custom w-100">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Produit 2 -->
+        <div class="col-md-4">
+          <div class="card border-0 h-100">
+            <img src="images/nettoyant.jpg" class="card-img-top" alt="Nettoyant visage" style="height: 200px; object-fit: contain;">
+            <div class="card-body">
+              <h5 class="card-title text-brown">Nettoyant Doux</h5>
+              <div class="rating small">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+                <span class="text-muted ms-1">(76)</span>
+              </div>
+              <p class="card-text mt-2">18,50€</p>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <button class="btn btn-custom w-100">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Produit 3 -->
+        <div class="col-md-4">
+          <div class="card border-0 h-100">
+            <div class="position-relative">
+              <img src="images/masque.jpg" class="card-img-top" alt="Masque hydratant" style="height: 200px; object-fit: contain;">
+              <span class="position-absolute top-0 end-0 bg-danger text-white small p-1 m-2 rounded">-20%</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title text-brown">Masque Nourrissant</h5>
+              <div class="rating small">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <span class="text-muted ms-1">(94)</span>
+              </div>
+              <p class="card-text mt-2">
+                <span class="text-danger">19,99€</span>
+                <del class="text-muted small ms-1">24,99€</del>
+              </p>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <button class="btn btn-custom w-100">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER SECTION -->
+  <section class="py-5 bg-soft">
+    <div class="container text-center">
+      <h3 class="text-brown fw-bold mb-3">Abonnez-vous à notre newsletter</h3>
+      <p class="mb-4">Recevez nos conseils beauté et nos offres exclusives</p>
+      <form class="row justify-content-center">
+        <div class="col-md-6 col-lg-4 mb-2">
+          <input type="email" class="form-control" placeholder="Votre email" required>
+        </div>
+        <div class="col-md-2 col-lg-2">
+          <button type="submit" class="btn btn-custom w-100">S'abonner</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Modal Avis Client -->
+  <div class="modal fade" id="reviewModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-brown">Donner votre avis</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Note</label>
+              <div class="rating" id="ratingStars">
+                <i class="bi bi-star-fill" data-rating="1"></i>
+                <i class="bi bi-star-fill" data-rating="2"></i>
+                <i class="bi bi-star-fill" data-rating="3"></i>
+                <i class="bi bi-star-fill" data-rating="4"></i>
+                <i class="bi bi-star-fill" data-rating="5"></i>
+                <input type="hidden" id="ratingValue" name="rating" value="0">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="reviewTitle" class="form-label">Titre de votre avis</label>
+              <input type="text" class="form-control" id="reviewTitle" required>
+            </div>
+            <div class="mb-3">
+              <label for="reviewText" class="form-label">Votre avis</label>
+              <textarea class="form-control" id="reviewText" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="userName" class="form-label">Votre nom (facultatif)</label>
+              <input type="text" class="form-control" id="userName">
+            </div>
+            <button type="submit" class="btn btn-custom">Envoyer</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Changement d'image dans la gallery
+    function changeImage(element, newImage) {
+      document.getElementById('mainImage').src = newImage;
+      
+      // Retirer la classe active de toutes les thumbnails
+      document.querySelectorAll('.thumbnail').forEach(thumb => {
+        thumb.classList.remove('active');
+      });
+      
+      // Ajouter la classe active à la thumbnail cliquée
+      element.classList.add('active');
+    }
+    
+    // Gestion de la quantité
+    function increaseQuantity() {
+      const quantityInput = document.getElementById('quantity');
+      quantityInput.value = parseInt(quantityInput.value) + 1;
+    }
+    
+    function decreaseQuantity() {
+      const quantityInput = document.getElementById('quantity');
+      if (parseInt(quantityInput.value) > 1) {
+        quantityInput.value = parseInt(quantityInput.value) - 1;
+      }
+    }
+    
+    // Système de notation
+    document.querySelectorAll('#ratingStars i').forEach(star => {
+      star.addEventListener('click', function() {
+        const rating = this.getAttribute('data-rating');
+        document.getElementById('ratingValue').value = rating;
+        
+        // Mettre à jour l'affichage des étoiles
+        document.querySelectorAll('#ratingStars i').forEach((s, index) => {
+          if (index < rating) {
+            s.classList.add('text-warning');
+          } else {
+            s.classList.remove('text-warning');
+          }
+        });
+      });
+      
+      star.addEventListener('mouseover', function() {
+        const rating = this.getAttribute('data-rating');
+        
+        document.querySelectorAll('#ratingStars i').forEach((s, index) => {
+          if (index < rating) {
+            s.classList.add('text-warning');
+          } else {
+            s.classList.remove('text-warning');
+          }
+        });
+      });
+      
+      star.addEventListener('mouseout', function() {
+        const currentRating = document.getElementById('ratingValue').value;
+        
+        document.querySelectorAll('#ratingStars i').forEach((s, index) => {
+          if (index < currentRating) {
+            s.classList.add('text-warning');
+          } else {
+            s.classList.remove('text-warning');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
