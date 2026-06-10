@@ -13,6 +13,7 @@
   <link rel="canonical" href="https://www.naturalglow.com">
   
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
 </head>
 <body>
@@ -104,7 +105,7 @@
         </div>
         <div class="col-lg-6 text-center mt-5 mt-lg-0">
           <div class="hero-image fade-in-up" style="animation-delay: 0.8s;">
-            <img src="images/hero-bg.jpg" alt="Produits NaturalGlow" class="img-fluid rounded-4 shadow-lg">
+            <img src="images/hero-product.jpg" alt="Produits NaturalGlow" class="img-fluid rounded-4 shadow-lg">
           </div>
         </div>
       </div>
@@ -389,7 +390,7 @@
       
       <div class="row align-items-center">
         <div class="col-md-6">
-          <p class="mb-0">&copy; 2024 NaturalGlow. Tous droits réservés.</p>
+          <p class="mb-0">&copy; <span class="current-year">2024</span> NaturalGlow. Tous droits réservés.</p>
         </div>
         <div class="col-md-6 text-md-end">
           <a href="#" class="text-light text-decoration-none me-3">Mentions légales</a>
@@ -405,6 +406,9 @@
   
   <!-- JavaScript personnalisé -->
   <script>
+    // Mettre à jour l'année de copyright
+    document.querySelectorAll('.current-year').forEach(el => el.textContent = new Date().getFullYear());
+
     // Navbar scroll effect
     window.addEventListener('scroll', function() {
       const navbar = document.querySelector('.navbar');

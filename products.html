@@ -185,7 +185,7 @@
       
       <div class="row align-items-center">
         <div class="col-md-6">
-          <p class="mb-0">&copy; 2024 NaturalGlow. Tous droits réservés.</p>
+          <p class="mb-0">&copy; <span class="current-year">2024</span> NaturalGlow. Tous droits réservés.</p>
         </div>
         <div class="col-md-6 text-md-end">
           <a href="#" class="text-light text-decoration-none me-3">Mentions légales</a>
@@ -201,6 +201,9 @@
   
   <!-- JavaScript pour la gestion des produits -->
   <script>
+    // Mettre à jour l'année de copyright
+    document.querySelectorAll('.current-year').forEach(el => el.textContent = new Date().getFullYear());
+
     // Base de données des produits
     const products = [
       {
@@ -394,7 +397,7 @@
                 <img src="${product.image}" class="w-100 h-100 object-fit-cover card-img-zoom" alt="${product.name}" loading="lazy">
               </div>
               ${product.originalPrice ? '<span class="badge bg-danger position-absolute top-0 start-0 m-2">Promo</span>' : ''}
-              <button class="btn btn-custom btn-sm position-absolute top-0 end-0 m-2" onclick="toggleWishlist(${product.id})">
+              <button class="btn btn-custom btn-sm position-absolute top-0 end-0 m-2" onclick="toggleWishlist(event, ${product.id})">
                 <i class="bi bi-heart"></i>
               </button>
             </div>
@@ -412,7 +415,7 @@
                   <span class="h5 text-brown fw-bold">${product.price.toFixed(2)}€</span>
                   ${product.originalPrice ? `<small class="text-muted text-decoration-line-through ms-2">${product.originalPrice.toFixed(2)}€</small>` : ''}
                 </div>
-                <button class="btn btn-custom btn-sm" onclick="addToCart(${product.id})">
+                <button class="btn btn-custom btn-sm" onclick="addToCart(event, ${product.id})">
                   <i class="bi bi-bag-plus"></i> Ajouter
                 </button>
               </div>
@@ -459,7 +462,7 @@
       displayProducts(currentProducts);
     }
 
-    function addToCart(productId) {
+    function addToCart(event, productId) {
       const product = products.find(p => p.id === productId);
       const existingItem = cart.find(item => item.id === productId);
       
@@ -473,22 +476,24 @@
       updateCartCount();
       
       // Animation de feedback
-      const btn = event.target;
-      const originalText = btn.innerHTML;
-      btn.innerHTML = '<i class="bi bi-check"></i> Ajouté !';
-      btn.classList.add('btn-success');
-      btn.classList.remove('btn-custom');
-      
-      setTimeout(() => {
-        btn.innerHTML = originalText;
-        btn.classList.remove('btn-success');
-        btn.classList.add('btn-custom');
-      }, 1500);
+      const btn = event.target.closest('button');
+      if (btn) {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="bi bi-check"></i> Ajouté !';
+        btn.classList.add('btn-success');
+        btn.classList.remove('btn-custom');
+        
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.classList.remove('btn-success');
+          btn.classList.add('btn-custom');
+        }, 1500);
+      }
     }
 
-    function toggleWishlist(productId) {
+    function toggleWishlist(event, productId) {
       // Implémentation de la wishlist (à développer)
-      const btn = event.target;
+      const btn = event.target.closest('button') || event.target;
       btn.classList.toggle('text-danger');
     }
 

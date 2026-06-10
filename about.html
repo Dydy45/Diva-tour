@@ -295,7 +295,7 @@
       
       <div class="row align-items-center">
         <div class="col-md-6">
-          <p class="mb-0">&copy; 2024 NaturalGlow. Tous droits réservés.</p>
+          <p class="mb-0">&copy; <span class="current-year">2024</span> NaturalGlow. Tous droits réservés.</p>
         </div>
         <div class="col-md-6 text-md-end">
           <a href="#" class="text-light text-decoration-none me-3">Mentions légales</a>
@@ -311,6 +311,9 @@
   
   <!-- JavaScript personnalisé -->
   <script>
+    // Mettre à jour l'année de copyright
+    document.querySelectorAll('.current-year').forEach(el => el.textContent = new Date().getFullYear());
+
     // Navbar scroll effect
     window.addEventListener('scroll', function() {
       const navbar = document.querySelector('.navbar');
