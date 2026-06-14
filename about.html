@@ -130,6 +130,17 @@
             </div>
             <h4 class="text-brown fw-bold">100% Naturel</h4>
             <p>Tous nos produits sont formulés exclusivement avec des ingrédients d'origine naturelle, sans parabènes, sulfates ou produits chimiques agressifs.</p>
+
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="text-center h-100">
+            <div class="mb-4">
+              <i class="bi bi-heart display-4 text-brown"></i>
+            </div>
+            <h4 class="text-brown fw-bold">Respect Animal</h4>
+            <p>Nous nous engageons à ne jamais tester nos produits sur les animaux et à utiliser uniquement des ingrédients cruelty-free.</p>
           </div>
         </div>
         
@@ -295,7 +306,7 @@
       
       <div class="row align-items-center">
         <div class="col-md-6">
-          <p class="mb-0">&copy; 2024 NaturalGlow. Tous droits réservés.</p>
+          <p class="mb-0">&copy; <span class="current-year">2024</span> NaturalGlow. Tous droits réservés.</p>
         </div>
         <div class="col-md-6 text-md-end">
           <a href="#" class="text-light text-decoration-none me-3">Mentions légales</a>
@@ -311,6 +322,9 @@
   
   <!-- JavaScript personnalisé -->
   <script>
+    // Mettre à jour l'année de copyright
+    document.querySelectorAll('.current-year').forEach(el => el.textContent = new Date().getFullYear());
+
     // Navbar scroll effect
     window.addEventListener('scroll', function() {
       const navbar = document.querySelector('.navbar');

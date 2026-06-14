@@ -137,7 +137,7 @@
       
       <div class="row align-items-center">
         <div class="col-md-6">
-          <p class="mb-0">&copy; 2024 NaturalGlow. Tous droits réservés.</p>
+          <p class="mb-0">&copy; <span class="current-year">2024</span> NaturalGlow. Tous droits réservés.</p>
         </div>
         <div class="col-md-6 text-md-end">
           <a href="#" class="text-light text-decoration-none me-3">Mentions légales</a>
@@ -153,6 +153,9 @@
   
   <!-- JavaScript pour les détails du produit -->
   <script>
+    // Mettre à jour l'année de copyright
+    document.querySelectorAll('.current-year').forEach(el => el.textContent = new Date().getFullYear());
+
     // Base de données des produits (même que dans products.html)
     const products = [
       {
@@ -185,8 +188,160 @@
         benefits: ["Nourrit intensément", "Adoucit la peau", "Parfum naturel", "Absorption rapide"],
         usage: "Appliquez sur peau sèche ou légèrement humide. Massez en mouvements circulaires.",
         volume: "100ml"
+      },
+      {
+        id: 3,
+        name: "Nettoyant Visage Doux",
+        category: "visage",
+        price: 18.50,
+        rating: 5,
+        reviews: 156,
+        image: "images/nettoyage.jpg",
+        description: "Doux et purifiant pour tous types de peau, sans sulfates ni parabènes.",
+        longDescription: "Notre nettoyant visage doux élimine en douceur les impuretés, l'excès de sébum et les traces de maquillage sans dessécher la peau. Sa formule enrichie en aloe vera et extrait de camomille apaise l'épiderme tout en maintenant son hydratation naturelle. Convient parfaitement pour un usage quotidien.",
+        ingredients: ["Aloe vera bio", "Extrait de camomille", "Eau florale de rose", "Glycérine végétale", "Tensioactifs doux sans sulfates"],
+        benefits: ["Nettoie en profondeur", "Calme les rougeurs", "Préserve l'hydratation", "Sensation de fraîcheur immédiate"],
+        usage: "Faites mousser une noisette de produit sur votre visage préalablement humidifié. Rincez abondamment à l'eau tiède.",
+        volume: "150ml"
+      },
+      {
+        id: 4,
+        name: "Crème Hydratante 24h",
+        category: "visage",
+        price: 22.90,
+        rating: 4,
+        reviews: 203,
+        image: "images/hydratation.jpg",
+        description: "24h d'hydratation intense avec de l'acide hyaluronique naturel.",
+        longDescription: "Conçue pour désaltérer les peaux les plus assoiffées, cette crème légère mais ultra-hydratante assure une diffusion continue de l'eau pendant 24 heures. Grâce à sa forte concentration en acide hyaluronique d'origine végétale et en beurre de karité, elle restaure la barrière lipidique et protège la peau de la déshydratation.",
+        ingredients: ["Acide hyaluronique naturel", "Beurre de karité bio", "Huile d'avocat", "Extrait de concombre", "Vitamine B5"],
+        benefits: ["Hydratation longue durée", "Repulpe la peau", "Restaure la barrière cutanée", "Fini non gras"],
+        usage: "Appliquez le matin sur le visage et le cou après le nettoyage ou l'application de votre sérum.",
+        volume: "50ml"
+      },
+      {
+        id: 5,
+        name: "Protection Solaire SPF 30",
+        category: "visage",
+        price: 24.90,
+        rating: 4,
+        reviews: 98,
+        image: "images/protection.jpg",
+        description: "Protection naturelle avec des filtres minéraux, sans traces blanches.",
+        longDescription: "Notre crème solaire SPF 30 offre une haute protection naturelle contre les rayons UVA et UVB grâce à ses filtres minéraux d'origine naturelle. Enrichie en huiles protectrices et en aloe vera, sa formule respectueuse de l'environnement n'agresse pas la faune marine et ne laisse aucun fini blanc ou collant sur la peau.",
+        ingredients: ["Oxyde de zinc non-nano", "Dioxyde de titane", "Jus d'aloe vera bio", "Huile de pépins de framboise", "Vitamine E"],
+        benefits: ["Haute protection UVA/UVB", "Filtres 100% minéraux", "Respectueux de l'océan", "Ne laisse pas de traces blanches"],
+        usage: "Appliquez généreusement sur le visage avant l'exposition au soleil. Renouvelez toutes les 2 heures et après chaque baignade.",
+        volume: "50ml"
+      },
+      {
+        id: 6,
+        name: "Savon Artisanal Bio",
+        category: "corps",
+        price: 12.90,
+        rating: 5,
+        reviews: 87,
+        image: "images/soap.jpg",
+        description: "Fabriqué à la main avec des ingrédients 100% biologiques.",
+        longDescription: "Ce savon d'exception est saponifié à froid afin de préserver toutes les propriétés nourrissantes des huiles végétales de coco et d'olive. Enrichi en argile rose purifiante et parfumé naturellement avec des huiles essentielles de géranium, il offre une mousse onctueuse et respectueuse du pH de la peau.",
+        ingredients: ["Huile de coco saponifiée", "Huile d'olive saponifiée", "Argile rose", "Beurre de cacao bio", "Huile essentielle de géranium"],
+        benefits: ["Nettoie en douceur", "Saponifié à froid", "Surgras et protecteur", "Respecte le pH naturel"],
+        usage: "Faites mousser sous l'eau et appliquez sur l'ensemble du corps. Rincez soigneusement.",
+        volume: "100g"
+      },
+      {
+        id: 7,
+        name: "Crème Corps Nourrissante",
+        category: "corps",
+        price: 28.50,
+        rating: 4,
+        reviews: 143,
+        image: "images/cream.jpg",
+        description: "Nourrit et protège la peau avec des beurres végétaux naturels.",
+        longDescription: "Cette crème riche et fondante est spécialement formulée pour nourrir intensément les peaux sèches à très sèches. L'association du beurre de karité, du beurre de mangue et de l'huile de macadamia hydrate, répare et apaise instantanément les sensations de tiraillement, laissant la peau souple et enveloppée d'un voile doux.",
+        ingredients: ["Beurre de karité sauvage", "Beurre de mangue", "Huile de macadamia", "Cire d'abeille bio", "Extrait de vanille naturelle"],
+        benefits: ["Nourrit intensément", "Répare les zones sèches", "Calme les tiraillements", "Parfum chaud et gourmand"],
+        usage: "Appliquez quotidiennement sur tout le corps, en insistant sur les zones les plus sèches (coudes, genoux, talons).",
+        volume: "200ml"
+      },
+      {
+        id: 8,
+        name: "Gel Douche Relaxant",
+        category: "corps",
+        price: 16.90,
+        rating: 4,
+        reviews: 112,
+        image: "images/body-wash.jpg",
+        description: "Formule douce avec des huiles essentielles apaisantes.",
+        longDescription: "Transformez votre douche en un moment de pur bien-être. Ce gel douche formulé sans savon nettoie délicatement la peau grâce à sa base lavante d'origine végétale très douce. Enrichi en huiles essentielles de lavande et de néroli, il libère des effluves relaxantes pour détendre le corps et l'esprit après une longue journée.",
+        ingredients: ["Tensioactifs dérivés de coco", "Eau florale de lavande bio", "Huile essentielle de néroli", "Glycérine végétale", "Extrait d'avoine"],
+        benefits: ["Nettoie sans irriter", "Formule biodégradable", "Parfum relaxant d'aromathérapie", "Peau douce et hydratée"],
+        usage: "Appliquez sur la peau humide, faites mousser puis rincez.",
+        volume: "250ml"
+      },
+      {
+        id: 9,
+        name: "Shampoing Cheveux Gras",
+        category: "cheveux",
+        price: 19.90,
+        rating: 4,
+        reviews: 76,
+        image: "images/cheveux.jpg",
+        description: "Purifie en douceur les cheveux gras avec des extraits d'argile.",
+        longDescription: "Notre shampoing sébo-régulateur purifie le cuir chevelu sans l'agresser. Grâce aux propriétés absorbantes de l'argile verte et aux vertus rafraîchissantes de l'huile essentielle de menthe poivrée, il élimine l'excès de sébum et espace les shampoings. Vos cheveux retrouvent volume, légèreté et fraîcheur.",
+        ingredients: ["Argile verte du Velay", "Huile essentielle de menthe poivrée bio", "Extrait d'ortie", "Protéines de blé hydrolysées", "Base lavante douce"],
+        benefits: ["Régule l'excès de sébum", "Purifie le cuir chevelu", "Apporte volume et légèreté", "Sensation de fraîcheur durable"],
+        usage: "Appliquez sur cheveux mouillés, massez le cuir chevelu pendant 1 à 2 minutes pour activer la circulation, puis rincez.",
+        volume: "200ml"
+      },
+      {
+        id: 10,
+        name: "Kit Découverte Visage",
+        category: "visage",
+        price: 39.90,
+        originalPrice: 52.50,
+        rating: 5,
+        reviews: 89,
+        image: "images/kit1.jpg",
+        description: "Kit complet pour découvrir notre routine de soins du visage.",
+        longDescription: "Ce coffret découverte réunit les indispensables de notre gamme visage pour une routine de soins naturelle complète. Il contient un nettoyant visage doux (30ml), une lotion tonique florale (30ml), un sérum anti-âge (10ml) et notre crème hydratante 24h (15ml). Idéal pour tester notre efficacité ou pour voyager.",
+        ingredients: ["Ingrédients issus de l'agriculture biologique", "Sans parabènes", "Sans parfums synthétiques", "Formules vegan-friendly"],
+        benefits: ["Routine complète de soins", "Format voyage pratique", "Convient à tous types de peaux", "Idée cadeau idéale"],
+        usage: "Utilisez chaque produit selon l'ordre recommandé : Nettoyant, Lotion, Sérum, puis Crème Hydratante.",
+        volume: "4 produits miniatures"
+      },
+      {
+        id: 11,
+        name: "Kit Routine Corps",
+        category: "corps",
+        price: 45.90,
+        originalPrice: 58.30,
+        rating: 5,
+        reviews: 67,
+        image: "images/kit2.jpg",
+        description: "Ensemble parfait pour une routine de soins du corps complète.",
+        longDescription: "Prenez soin de votre corps grâce à ce coffret routine qui regroupe trois de nos best-sellers corps. Il comprend un gommage corporel exfoliant au sucre de coco (100g), notre gel douche relaxant (250ml) et la crème corps nourrissante (200ml) pour retrouver une peau infiniment douce, lisse et parfaitement nourrie.",
+        ingredients: ["Huiles et beurres végétaux bio", "Grains de sucre de coco naturels", "Parfums d'origine naturelle"],
+        benefits: ["Exfolie, nettoie et nourrit", "Routine spa à la maison", "Parfum envoûtant et relaxant", "Produits grand format"],
+        usage: "Utilisez le gommage sous la douche 2 fois par semaine, le gel douche quotidiennement, et terminez par la crème après chaque douche.",
+        volume: "300ml"
+      },
+      {
+        id: 12,
+        name: "Kit Soins Spéciaux",
+        category: "visage",
+        price: 52.90,
+        originalPrice: 69.90,
+        rating: 5,
+        reviews: 45,
+        image: "images/kit3.jpg",
+        description: "Collection de soins premium pour une expérience beauté exceptionnelle.",
+        longDescription: "Le nec plus ultra du soin visage dans un seul et même coffret. Notre kit de soins spéciaux cible les besoins intenses de la peau avec notre sérum anti-âge révolutionnaire (30ml), un masque régénérant à l'argile rose et aux fleurs d'hibiscus (50ml) et un rouleau de massage en Quartz Rose pour optimiser l'absorption des actifs.",
+        ingredients: ["Acide hyaluronique naturel", "Poudre de fleurs d'hibiscus bio", "Quartz rose 100% naturel"],
+        benefits: ["Action anti-âge décuplée", "Rituel bien-être ancestral", "Teint éclatant et repuplé", "Format coffret luxe"],
+        usage: "Appliquez le masque 1 à 2 fois par semaine. Appliquez le sérum quotidiennement matin et soir en effectuant un massage liftant à l'aide du rouleau de Quartz Rose.",
+        volume: "3 produits d'exception"
       }
-      // Autres produits...
     ];
 
     let cart = JSON.parse(localStorage.getItem('cart') || '[]');
@@ -271,10 +426,10 @@
           </div>
           
           <div class="d-flex gap-3 mb-4">
-            <button class="btn btn-custom btn-lg" onclick="addToCart(${product.id})">
+            <button class="btn btn-custom btn-lg" onclick="addToCart(event, ${product.id})">
               <i class="bi bi-bag-plus me-2"></i>Ajouter au panier
             </button>
-            <button class="btn btn-outline-brown btn-lg" onclick="toggleWishlist(${product.id})">
+            <button class="btn btn-outline-brown btn-lg" onclick="toggleWishlist(event, ${product.id})">
               <i class="bi bi-heart"></i>
             </button>
           </div>
@@ -383,7 +538,7 @@
                   <span class="h5 text-brown fw-bold">${product.price.toFixed(2)}€</span>
                   ${product.originalPrice ? `<small class="text-muted text-decoration-line-through ms-2">${product.originalPrice.toFixed(2)}€</small>` : ''}
                 </div>
-                <button class="btn btn-custom btn-sm" onclick="addToCart(${product.id})">
+                <button class="btn btn-custom btn-sm" onclick="addToCart(event, ${product.id})">
                   <i class="bi bi-bag-plus"></i>
                 </button>
               </div>
@@ -402,9 +557,10 @@
       }
     }
 
-    function addToCart(productId) {
+    function addToCart(event, productId) {
       const product = products.find(p => p.id === productId);
-      const quantity = parseInt(document.getElementById('quantity').value);
+      const quantityInput = document.getElementById('quantity');
+      const quantity = quantityInput ? parseInt(quantityInput.value) : 1;
       const existingItem = cart.find(item => item.id === productId);
       
       if (existingItem) {
@@ -418,21 +574,28 @@
       
       // Feedback visuel
       const btn = event.target.closest('button');
-      const originalText = btn.innerHTML;
-      btn.innerHTML = '<i class="bi bi-check"></i> Ajouté !';
-      btn.classList.add('btn-success');
-      btn.classList.remove('btn-custom');
-      
-      setTimeout(() => {
-        btn.innerHTML = originalText;
-        btn.classList.remove('btn-success');
-        btn.classList.add('btn-custom');
-      }, 2000);
+      if (btn) {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="bi bi-check"></i> Ajouté !';
+        btn.classList.add('btn-success');
+        btn.classList.remove('btn-custom');
+        
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.classList.remove('btn-success');
+          btn.classList.add('btn-custom');
+        }, 2000);
+      }
     }
 
-    function toggleWishlist(productId) {
+    function toggleWishlist(event, productId) {
       const btn = event.target.closest('button');
-      btn.querySelector('i').classList.toggle('text-danger');
+      if (btn) {
+        const heartIcon = btn.querySelector('i');
+        if (heartIcon) {
+          heartIcon.classList.toggle('text-danger');
+        }
+      }
     }
 
     function updateCartCount() {
